@@ -1,0 +1,3 @@
+# FileUPWindows
+Acerca de la base de datos: es necesario crearla manualmente, esta diseñada para estar alojada en un sgbd mysql server, y utiliza como driver el que instala por defecto al instalar mysql
+en caso de querer cambiar de sgbd, seria necesario cambiar el link del driver en el proyecto y cambiar el fichero "conexion.properties" con los ajustes necesarios, y podria ser necesario, cambiar el script de cracion de la bd

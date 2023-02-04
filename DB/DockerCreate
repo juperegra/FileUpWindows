@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/mssql/server:2017-latest
+		ENV ACCEPT_EULA=Y
+        ENV SA_PASSWORD=Test@12345
+        ENV MSSQL_TCP_PORT=1433 
+        
+        WORKDIR /src
+        
+        COPY . .
+    
+        RUN (/opt/mssql/bin/sqlservr --accept-eula & ) | grep -q "Service Broker manager has started" &&  /opt/mssql-tools/bin/sqlcmd -S127.0.0.1 -Usa -PTest@12345  -Q"RESTORE DATABASE prueba FROM DISK='/src/FileUPDataBase.sql';"
+
+docker run -p 3030:3030 4b41a3fbcd94 -accept-eula
+
+
+       
